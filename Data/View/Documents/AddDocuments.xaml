@@ -1,0 +1,463 @@
+﻿<Page
+    x:Class="Data.View.AddDocuments"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="ParentPage"
+    xmlns:conv="using:Data.Converters" 
+    DataContext="{Binding Source={StaticResource Locator}, Path=AddDocumentsViewModel}">
+
+    <Page.Resources>
+        <conv:PriceFormatConverter x:Name="PriceFormatConverter"/>
+        <conv:VatFormatConverter x:Name="VatFormatConverter"/>
+    </Page.Resources>
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ComboBox PlaceholderText="Typ dokumentu"
+                      Grid.ColumnSpan="4"
+                      Grid.Row="0"
+                      Style="{StaticResource Combo}" Margin="15,0,0,0"
+                      ItemsSource="{Binding TypeDocumentColection}"
+                      SelectedValue="{Binding TypeDocument, Mode=TwoWay}"/>
+
+            <ComboBox PlaceholderText="Rodzaj cen"
+                      Grid.Column="5"
+                      Grid.ColumnSpan="3"
+                      Grid.Row="0"
+                      Style="{StaticResource Combo}" Margin="0,0,15,0"
+                      ItemsSource="{Binding TypeOfPricesColection}"
+                      SelectedValue="{Binding KindOfPrices, Mode=TwoWay}"/>
+
+            <TextBlock Text="Numer dokumentu:"          
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="2"
+                       Style="{StaticResource Text}"/>
+
+            <ComboBox Grid.Column="2"
+                      Grid.ColumnSpan="2"
+                      Grid.Row="2"
+                      IsEnabled="False"
+                      Style="{StaticResource Combo}"
+                      ItemsSource="{Binding NumberDocumentColection}"
+                      SelectedValue="{Binding CheckFieldNumberDocument, Mode=TwoWay}"/>
+
+            <TextBox PlaceholderText="Nazwa dokumentu"                      
+                     Grid.Column="5"
+                     Grid.ColumnSpan="3"
+                     Grid.Row="2"
+                     IsEnabled="{Binding NumberDocumentFieldOpenClose, Mode=TwoWay}"
+                     Margin="0,0,15,0"
+                     Style="{StaticResource BoxShort}"
+                     Text="{Binding NumberDocument, Mode=TwoWay}"/>
+
+            <TextBlock Text="Odbiorca:"          
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="4"
+                       Margin="15,0,0,0"
+                       Style="{StaticResource Text}"/>
+
+            <TextBox PlaceholderText="Odbiorca"                      
+                     Grid.Column="2"
+                     Grid.ColumnSpan="4"
+                     Grid.Row="4"
+                     IsEnabled="False"
+                     Style="{StaticResource BoxShort}"
+                     Text="{Binding Recipient.NameCompany}"/>
+
+            <Button Grid.Column="6"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="4" 
+                    Content="Wybierz odbiorce"
+                    Style="{StaticResource ButtonStretch}"
+                    Command="{Binding NavigateCommand}" 
+                    CommandParameter="SelectRecipientViewModel"/>
+
+            <TextBlock Text="Płatnik:"          
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="6"
+                       Style="{StaticResource Text}" />
+
+            <TextBox PlaceholderText="Płatnik"                      
+                     Grid.Column="2"
+                     Grid.ColumnSpan="4"
+                     Grid.Row="6"
+                     IsEnabled="False"
+                     Style="{StaticResource BoxShort}"
+                     Text="{Binding Payer.NameCompany}"/>
+
+            <Button Grid.Column="6"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="6" 
+                    Content="Wybierz płatnika"
+                    Style="{StaticResource ButtonStretch}" Margin="12,0,11,1"
+                    Command="{Binding NavigateCommand}" 
+                    CommandParameter="SelectPayerViewModel"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ComboBox PlaceholderText="Typ płatności"
+                      Grid.ColumnSpan="4"
+                      Grid.Row="0"
+                      Style="{StaticResource Combo}" Margin="20,0,20,0"
+                      ItemsSource="{Binding PaymentTypeColection}"
+                      SelectedValue="{Binding PaymentType, Mode=TwoWay}"/>
+
+            <TextBox PlaceholderText="Numer konta wystawcy"                      
+                     Grid.Column="4"
+                     Grid.ColumnSpan="4"
+                     Grid.Row="0"
+                     IsEnabled="{Binding AccountNumberFieldOpenClose, Mode=TwoWay}"
+                     Margin="0,0,15,0"
+                     Style="{StaticResource BoxShort}"
+                     Text="{Binding AccountNumber, Mode=TwoWay}"/>
+
+            <TextBlock Text="Termin płatności:"          
+                       Grid.Column="0"
+                       Grid.ColumnSpan="3"
+                       Grid.Row="2"                   
+                       Style="{StaticResource Text}"/>
+
+            <DatePicker Grid.Column="3"
+                        Grid.ColumnSpan="5"
+                        Name="Date"
+                        Grid.Row="2"
+                        Style="{StaticResource DataPicker}"
+                        Date="{Binding DateOfPayment, Mode=TwoWay}"/>
+
+            <TextBlock Text="Data sprzedaży:"          
+                       Grid.Column="0"
+                       Grid.ColumnSpan="3"
+                       Grid.Row="4"
+                       Style="{StaticResource Text}" />
+
+            <DatePicker Grid.Column="3"
+                        Grid.ColumnSpan="5"
+                        Grid.Row="4"
+                        Style="{StaticResource DataPicker}"
+                        Date="{Binding DateOfSale, Mode=TwoWay}"/>
+
+            <Button Grid.Row="6" 
+                    Content="Dodaj towar z bazy do listy poniżej"
+                    Style="{StaticResource ButtonStretch}" Grid.ColumnSpan="4" Margin="35,0,34,0" 
+                    Command="{Binding NavigateCommand}" 
+                    CommandParameter="SelectProductViewModel"/>
+
+            <Button Grid.Row="6" 
+                    Content="Usuń wybraną pozycje z listy poniżej"
+                    Style="{StaticResource ButtonStretch}" Grid.Column="4" Grid.ColumnSpan="4"
+                    Command="{Binding DeleteProdyctWithListCommand}"/>
+        </Grid>
+
+        <Grid BorderBrush="SteelBlue" 
+                  Margin="5,15,5,0"
+                  BorderThickness="2,2,2,0"
+                  Grid.Column="0" 
+                  Grid.ColumnSpan="2"
+                  Grid.Row="1" Padding="13,0,0,7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0"
+                                Text="Nazwa"
+                                FontSize="12"
+                                TextWrapping="Wrap"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Column="1"
+                                Text="Kod"
+                                FontSize="12"
+                                TextWrapping="Wrap"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Column="2"
+                                Text="Kategoria"
+                                FontSize="12"
+                                TextWrapping="Wrap"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Column="3"
+                                Text="Vat"
+                                FontSize="12"
+                                TextWrapping="Wrap"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Column="4"
+                                Text="Jednostka miary"
+                                FontSize="12"
+                                TextWrapping="Wrap"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Column="5"
+                                Text="Netto    zakupu"
+                                FontSize="12"
+                                TextWrapping="Wrap"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Column="6"
+                                Text="Brutto   zakupu"
+                                FontSize="12"
+                                TextWrapping="Wrap"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Column="7"
+                                Text="Netto   sprzedaży"
+                                FontSize="12"
+                                TextWrapping="Wrap"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Column="8"
+                                Text="Brutto   sprzedaży"
+                                FontSize="12"
+                                TextWrapping="Wrap"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Column="9"
+                                Text="Ilość"
+                                FontSize="12"
+                                TextWrapping="Wrap"          
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+        </Grid>
+
+        <ListView ItemsSource="{Binding Path=ItemProductList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedValue="{Binding SelectedValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  Grid.Row="2"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  BorderBrush="SteelBlue" 
+                  Margin="5,0,5,5"
+                  BorderThickness="2">
+
+            <ListView.ItemContainerTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition IsStaggeringEnabled="True" 
+                                FromVerticalOffset="400" 
+                                FromHorizontalOffset="0"/>
+                    <RepositionThemeTransition/>
+                </TransitionCollection>
+            </ListView.ItemContainerTransitions>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Background" Value="Gainsboro"/>
+                    <Setter Property="Margin" Value="0,10,0,10"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="75"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="70"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                                Name="NameProduct"
+                                Text="{Binding Name, Mode=TwoWay}"
+                                FontSize="12"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                                Text="{Binding Code, Mode=TwoWay}"
+                                VerticalAlignment="Center"
+                                FontSize="12"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"/>
+
+                        <TextBlock Grid.Column="2"
+                                Text="{Binding Category, Mode=TwoWay}"
+                                FontSize="12"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="3"
+                                Text="{Binding VAT, Mode=TwoWay, Converter={StaticResource VatFormatConverter}}"
+                                FontSize="12"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="4"
+                                Text="{Binding UnitOfMeasure, Mode=TwoWay}"
+                                FontSize="12"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="5"
+                                Text="{Binding NetBuy, Mode=TwoWay, Converter={StaticResource PriceFormatConverter}}"
+                                FontSize="12"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="6"
+                                Text="{Binding GrossBuy, Mode=TwoWay, Converter={StaticResource PriceFormatConverter}}"
+                                FontSize="12"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="7"
+                                Text="{Binding NetSale, Mode=TwoWay, Converter={StaticResource PriceFormatConverter}}"
+                                FontSize="12"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="8"
+                                Text="{Binding GrossSale, Mode=TwoWay, Converter={StaticResource PriceFormatConverter}}"
+                                FontSize="12"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+                        <TextBox Grid.Column="9"
+                                Text="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                FontSize="12"
+                                HorizontalAlignment="Center"
+                                TextAlignment="Center"
+                                VerticalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <TextBlock  Name="Status" 
+                    Text="{Binding Status, Mode=TwoWay}"
+                    FontWeight="Bold"
+                    Foreground="{Binding ForegroundStatus, Mode=TwoWay}"
+                    HorizontalAlignment="Center"
+                    FontSize="20"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="3"
+                    Visibility="{Binding StatusVisibility}"
+                    Margin="0,8,0,0"
+                    TextWrapping="Wrap"/>
+
+        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Zapisz i wygeneruj plik .PDF"
+                    Grid.Column="0"
+                    Margin="15,15,15,15"
+                    Style="{StaticResource ButtonStretch}" FontWeight="Bold"
+                    Command="{Binding AddDocumentAndGeneratePDFCommand}"/>
+
+            <Button Content="Tylko Zapisz"
+                    Grid.Column="1"
+                    Margin="15,15,15,15"
+                    Style="{StaticResource ButtonStretch}"
+                    Command="{Binding AddDocumentToDatabaseCommand}"/>
+
+            <Button Content="Wyczyść wszystkie pola"
+                    Grid.Column="3"
+                    Margin="15,15,15,15"
+                    Style="{StaticResource ButtonStretch}"
+                    Command="{Binding ClearAllFieldsCommand}"/>
+        </Grid>
+    </Grid>
+</Page>

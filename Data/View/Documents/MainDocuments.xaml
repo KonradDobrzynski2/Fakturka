@@ -1,0 +1,84 @@
+﻿<Page
+    x:Class="Data.View.MainDocuments"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:Data.ViewModel.Another"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource Locator}, Path=MainDocumentsViewModel}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid BorderThickness="0,0,0,3" BorderBrush="#FFC9D8F9">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    RelativePanel.AlignLeftWithPanel="True"                  
+                    Command="{Binding HamburgerCommand}"
+                    Style="{StaticResource HamburgerButton}"/>
+
+            <Button Grid.Column="1"
+                    Name="BackButton"
+                    Content="&#xE802;"
+                    Margin="10,0,0,0"
+                    Visibility="{Binding Visibility}"
+                    Style="{StaticResource HamburgerButton}"
+                    Command="{Binding BackButtonNavigateCommand}"/>
+
+            <TextBlock Name="TitleBlockProviders"
+                       Grid.Column="2"
+                       Style="{StaticResource MainTitle}"
+                       Text="{Binding Title, Mode=TwoWay}"/>
+        </Grid>
+
+        <SplitView Grid.Row="1" 
+                   IsPaneOpen="{Binding SplitView_Status, Mode=TwoWay}"
+                   Name="SplitView"
+                   Style="{StaticResource HamburgerSplitview}">
+            <SplitView.Pane>
+                <StackPanel Background="#FFC9D8F9">
+                    <RadioButton Command="{Binding MainButtonNavigateCommand}"
+                                 CommandParameter="AddDocumentsViewModel"
+                                 Content="Dodaj dokument"
+                                 Style="{StaticResource SplitViewRadioButtonStyle}"
+                                 IsChecked="True">
+                        <RadioButton.Tag>
+                            <TextBlock Text="&#xE801;" Style="{StaticResource IconList}"/>
+                        </RadioButton.Tag>
+                    </RadioButton>
+
+                    <RadioButton Command="{Binding MainButtonNavigateCommand}"
+                                 CommandParameter="ListDocumentsViewModel"
+                                 Content="Lista dokumentów"
+                                 Style="{StaticResource SplitViewRadioButtonStyle}">
+                        <RadioButton.Tag>
+                            <TextBlock Text="&#xE806;" Style="{StaticResource IconList}" />
+                        </RadioButton.Tag>
+                    </RadioButton>
+
+                    <RadioButton Command="{Binding MainButtonNavigateCommand}"
+                                 CommandParameter="TrashDocumentsViewModel"
+                                 Content="Kosz"
+                                 Style="{StaticResource SplitViewRadioButtonStyle}">
+                        <RadioButton.Tag>
+                            <TextBlock Text="&#xe805;" Style="{StaticResource IconList}" />
+                        </RadioButton.Tag>
+                    </RadioButton>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content >
+                <Frame Name="MyFrame" Margin="0,10,0,0"/>
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
+</Page>
+

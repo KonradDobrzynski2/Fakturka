@@ -1,0 +1,78 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Fakturka"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="using:Data.View"
+    x:Class="Fakturka.MainPage"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource Locator}, Path=MainPageViewModel}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+        <Pivot Margin="-12,0,0,0" Grid.RowSpan="2" Name="Pivot" SelectedIndex="{Binding SelectedItem, Mode=TwoWay}" SelectionChanged="Pivot_SelectionChanged">
+            <PivotItem>
+                <PivotItem.Header>
+                    <local:TabHeader_TextBlock Text="Dokumenty" Font="/Fonts/fontello.ttf#fontello" Icon="&#xe809;"/>
+                </PivotItem.Header>
+                <PivotItem VerticalAlignment="Stretch" Margin="0,0,0,0">
+                    <view:MainDocuments x:Name="MainDocuments"/>
+                </PivotItem>
+            </PivotItem>
+            <PivotItem>
+                <PivotItem.Header>
+                    <local:TabHeader_TextBlock Text="Towary" Font="/Fonts/fontello.ttf#fontello" Icon="&#xe808;"/>
+                </PivotItem.Header>
+                <PivotItem VerticalAlignment="Stretch" Margin="0,0,0,0">
+                    <view:MainProducts x:Name="MainProducts"/>
+                </PivotItem>
+            </PivotItem>
+            <PivotItem>
+                <PivotItem.Header>
+                    <local:TabHeader_TextBlock Text="Kontrahenci" Font="/Fonts/fontello.ttf#fontello" Icon="&#xE80F;"/>
+                </PivotItem.Header>
+                <PivotItem VerticalAlignment="Stretch" Margin="0,0,0,0">
+                    <view:MainProviders x:Name="MainProviders"/>
+                </PivotItem>
+            </PivotItem>
+            <!--<PivotItem>
+                <PivotItem.Header>
+                    <local:TabHeader_TextBlock Text="Magazyn" Font="/Fonts/fontello.ttf#fontello" Icon="&#xe80a;"/>
+                </PivotItem.Header>
+                <PivotItem VerticalAlignment="Stretch" Margin="0,0,0,0">
+                    -->
+            <!--0,0,0,48-->
+            <!--<view:Main_Warehouse/>-->
+            <!--
+                </PivotItem>
+            </PivotItem>-->
+        </Pivot>
+
+        <!--JAK ZROBIC PIVOTA, GDZIE ITEM BĘDZIE POKAZYWANY NA GÓRZE W SUSUNKU TO MENU PIVOTA
+        http://stackoverflow.com/questions/35482341/how-place-pivot-header-bottom
+        http://stackoverflow.com/questions/34309551/how-place-tab-pivot-headers-on-the-bottom-screen-windows-10-universal-app-->
+
+        <!--<Pivot VerticalAlignment="Bottom">
+            <PivotItem>
+                <PivotItem.Header>
+                    <local:TabHeader_TextBlock Text="Ustawienia" FontFamily="/Fonts/fontello.ttf#fontello" Icon="&#xe80b;"/>
+                </PivotItem.Header>
+                <PivotItem VerticalAlignment="Stretch" Margin="0,0,0,48">
+                    <view:Main_Settings/>
+                </PivotItem>
+            </PivotItem>
+            <PivotItem>
+                <PivotItem.Header>
+                    <local:TabHeader_TextBlock Text="Archiwizacja/Dearchiwizacja" FontFamily="/Fonts/fontello.ttf#fontello" Icon="&#xe80c;"/>
+                </PivotItem.Header>
+                <PivotItem VerticalAlignment="Stretch" Margin="0,0,0,48">
+                    <view:Main_archiving_unarchiving/>
+                </PivotItem>
+            </PivotItem>
+        </Pivot>-->
+    </Grid>
+</Page>

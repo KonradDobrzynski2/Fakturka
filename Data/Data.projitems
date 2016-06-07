@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>2d4b05ec-6b09-4bc2-b3d0-0a3f65236b58</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Data</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)my_controls\ListViewItem_providers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)my_controls\TabHeader_TextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\hamburger_styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\another_styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\search_styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Documents\AddDocuments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Documents\Another\EditWithListDocuments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Documents\Another\ProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Documents\Another\SelectPayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Documents\Another\SelectProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Documents\Another\SelectRecipient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Documents\MainDocuments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Documents\ListDocuments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Documents\TrashDocuments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Products\AddProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Products\Another\EditWithListProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Products\Another\AddWithDraftsProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Products\Another\CreateCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Products\DraftsProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Products\ListProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Products\MainProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Products\TrashProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Providers\AddProviders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Providers\Another\AddWithDraftsProviders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Providers\Another\EditWithListProviders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Providers\DraftsProviders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Providers\ListProviders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Providers\MainProviders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Providers\TrashProviders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AnotherClass\Settings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AnotherClass\ItemProductList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AnotherClass\SampleDataInDatabase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AnotherClass\Strings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\DocumentConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\VatFormatConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\PriceFormatConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messengers\LocalButtonAndTitle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Another\documents\DocumentFields_adddocuments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Another\documents\NumberDocument_adddocuments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Another\documents\PaymentType_adddocuments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Another\documents\TypeDocument_adddocuments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Another\documents\TypeOfPrices_adddocuments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Another\products\Category_addproducts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Another\products\UnitOfMeasure_addproducts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Another\products\ProductFields_addproducts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Another\products\VAT_addproductscs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Another\providers\Country_addproviders.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Another\providers\State_addproviders.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Another\providers\Type_addproviders.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Another\providers\UserFields_addproviders.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Document.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DocumentProductcs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Product.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)my_controls\ListViewItem_providers.xaml.cs">
+      <DependentUpon>ListViewItem_providers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)my_controls\TabHeader_TextBlock.xaml.cs">
+      <DependentUpon>TabHeader_TextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\BaseDbRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\ProductDbRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\DocumentDbRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\DocumentProductcsDbRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\UserDbRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IDatabase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\INavigation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\WindowsDatabase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\WindowsNavigation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Singletons\Singleton_ConnectionValue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Another\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Another\MainPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Another\ViewModelLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Another\ViewState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DocumentsViewModel\Another\ProductViewViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DocumentsViewModel\Another\SelectPayerViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DocumentsViewModel\Another\SelectProductViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DocumentsViewModel\Another\SelectRecipientViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DocumentsViewModel\ListDocumentsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DocumentsViewModel\MainDocumentsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DocumentsViewModel\TrashDocumentsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DocumentsViewModel\AddDocumentsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProductsViewModel\AddProductsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProductsViewModel\Another\EditWithListProductsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProductsViewModel\Another\AddWithDraftsProductsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProductsViewModel\Another\CreateCategoryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProductsViewModel\DraftsProductsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProductsViewModel\ListProductsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProductsViewModel\MainProductsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProductsViewModel\TrashProductsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProvidersViewModel\AddProvidersViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProvidersViewModel\Another\AddWithDraftsProvidersViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProvidersViewModel\Another\EditWithListProvidersViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProvidersViewModel\DraftsProvidersViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProvidersViewModel\ListProvidersViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProvidersViewModel\MainProvidersViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProvidersViewModel\TrashProvidersViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\Documents\AddDocuments.xaml.cs">
+      <DependentUpon>AddDocuments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Documents\Another\EditWithListDocuments.xaml.cs">
+      <DependentUpon>EditWithListDocuments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Documents\Another\ProductView.xaml.cs">
+      <DependentUpon>ProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Documents\Another\SelectPayer.xaml.cs">
+      <DependentUpon>SelectPayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Documents\Another\SelectProduct.xaml.cs">
+      <DependentUpon>SelectProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Documents\Another\SelectRecipient.xaml.cs">
+      <DependentUpon>SelectRecipient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Documents\MainDocuments.xaml.cs">
+      <DependentUpon>MainDocuments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Documents\ListDocuments.xaml.cs">
+      <DependentUpon>ListDocuments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Documents\TrashDocuments.xaml.cs">
+      <DependentUpon>TrashDocuments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Products\AddProducts.xaml.cs">
+      <DependentUpon>AddProducts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Products\Another\EditWithListProducts.xaml.cs">
+      <DependentUpon>EditWithListProducts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Products\Another\AddWithDraftsProducts.xaml.cs">
+      <DependentUpon>AddWithDraftsProducts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Products\Another\CreateCategory.xaml.cs">
+      <DependentUpon>CreateCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Products\DraftsProducts.xaml.cs">
+      <DependentUpon>DraftsProducts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Products\ListProducts.xaml.cs">
+      <DependentUpon>ListProducts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Products\MainProducts.xaml.cs">
+      <DependentUpon>MainProducts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Products\TrashProducts.xaml.cs">
+      <DependentUpon>TrashProducts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Providers\AddProviders.xaml.cs">
+      <DependentUpon>AddProviders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Providers\Another\AddWithDraftsProviders.xaml.cs">
+      <DependentUpon>AddWithDraftsProviders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Providers\Another\EditWithListProviders.xaml.cs">
+      <DependentUpon>EditWithListProviders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Providers\DraftsProviders.xaml.cs">
+      <DependentUpon>DraftsProviders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Providers\ListProviders.xaml.cs">
+      <DependentUpon>ListProviders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Providers\MainProviders.xaml.cs">
+      <DependentUpon>MainProviders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Providers\TrashProviders.xaml.cs">
+      <DependentUpon>TrashProviders.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Fonts\fontello.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Fonts\fontello.ttf" />
+  </ItemGroup>
+</Project>

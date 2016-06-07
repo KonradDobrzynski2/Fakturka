@@ -1,0 +1,312 @@
+﻿<Page
+    x:Class="Data.View.DraftsProviders"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource Locator}, Path=DraftsProvidersViewModel}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Name="Status" 
+                       Text="{Binding Status, Mode=TwoWay}"   
+                       FontWeight="Bold"
+                       HorizontalAlignment="Stretch"
+                       TextAlignment="Center"
+                       FontSize="20"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="3"
+                       Height="32"/>
+
+            <ComboBox PlaceholderText="Po czym szukać?"
+                      Margin="0,0,10,0"
+                      Grid.Column="3"
+                      Grid.ColumnSpan="2"
+                      ItemsSource="{Binding SearchFildsColection}"
+                      SelectedValue="{Binding SearchFild, Mode=TwoWay}"               
+                      Style="{StaticResource Combo}"/>
+
+            <TextBox Name="SearchTextBox" 
+                     Margin="10,0,5,0"
+                     Grid.Column="5"
+                     Grid.ColumnSpan="3"
+                     Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource SearchTextBox}"/>
+        </Grid>
+
+        <ListView ItemsSource="{Binding UserColection, Mode=TwoWay}"
+                  Name="ListView"
+                  SelectedValue="{Binding SelectedValue, Mode=TwoWay}"
+                  Grid.Row="1" 
+                  Grid.Column="0" 
+                  Grid.ColumnSpan="2"
+                  Margin="5,10,5,5">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="Background" Value="Gainsboro"/>
+                    <Setter Property="Margin" Value="5,10,5,10"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid BorderBrush="LightGray" BorderThickness="2,0,2,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0" BorderBrush="LightGray" BorderThickness="0,0,2,0" Margin="5,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Nazwa kontrahenta:"
+                                 Grid.Column="0"
+                                 Grid.Row="0"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10" 
+                                 FontWeight="SemiBold"/>
+
+                            <TextBlock Text="{Binding NameCompany}"
+                                 Grid.Column="1"
+                                 Grid.Row="0"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10" 
+                                 FontWeight="SemiBold"/>
+
+                            <TextBlock Text="Imię:"
+                                 Grid.Column="0"
+                                 Grid.Row="1"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="{Binding FirstName}"
+                                 Grid.Column="1"
+                                 Grid.Row="1"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="Nazwisko:"
+                                 Grid.Column="0"
+                                 Grid.Row="2"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="{Binding LastName}"
+                                 Grid.Column="1"
+                                 Grid.Row="2"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="Typ:"
+                                 Grid.Column="0"
+                                 Grid.Row="3"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="{Binding Type}"
+                                 Grid.Column="1"
+                                 Grid.Row="3"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="NIP:"
+                                 Grid.Column="0"
+                                 Grid.Row="4"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10" 
+                                 FontWeight="SemiBold"/>
+
+                            <TextBlock Text="{Binding Nip}"
+                                 Grid.Column="1"
+                                 Grid.Row="4"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10" 
+                                 FontWeight="SemiBold"/>
+
+                            <TextBlock Text="Regon:"
+                                 Grid.Column="0"
+                                 Grid.Row="5"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="{Binding Regon}"
+                                 Grid.Column="1"
+                                 Grid.Row="5"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="Pesel:"
+                                 Grid.Column="0"
+                                 Grid.Row="6"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="{Binding Pesel}"
+                                 Grid.Column="1"
+                                 Grid.Row="6"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Margin="5,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Kod pocztowy:"
+                                 Grid.Column="0"
+                                 Grid.Row="0"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="{Binding PostalCode}"
+                                 Grid.Column="1"
+                                 Grid.Row="0"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="Miejscowość:"
+                                 Grid.Column="0"
+                                 Grid.Row="1"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10" 
+                                 FontWeight="SemiBold"/>
+
+                            <TextBlock Text="{Binding City}"
+                                 Grid.Column="1"
+                                 Grid.Row="1"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10" 
+                                 FontWeight="SemiBold"/>
+
+                            <TextBlock Text="Adres:"
+                                 Grid.Column="0"
+                                 Grid.Row="2"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="{Binding Address}"
+                                 Grid.Column="1"
+                                 Grid.Row="2"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="Województwo:"
+                                 Grid.Column="0"
+                                 Grid.Row="3"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="{Binding State}"
+                                 Grid.Column="1"
+                                 Grid.Row="3"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="Kraj:"
+                                 Grid.Column="0"
+                                 Grid.Row="4"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="{Binding Country}"
+                                 Grid.Column="1"
+                                 Grid.Row="4"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10"/>
+
+                            <TextBlock Text="E-Mail:"
+                                 Grid.Column="0"
+                                 Grid.Row="5"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10" 
+                                 FontWeight="SemiBold"/>
+
+                            <TextBlock Text="{Binding Email}"
+                                 Grid.Column="1"
+                                 Grid.Row="5"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10" 
+                                 FontWeight="SemiBold"/>
+
+                            <TextBlock Text="Numer telefonu:"
+                                 Grid.Column="0"
+                                 Grid.Row="6"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10" 
+                                 FontWeight="SemiBold"/>
+
+                            <TextBlock Text="{Binding PhoneNumber}"
+                                 Grid.Column="1"
+                                 Grid.Row="6"
+                                 HorizontalAlignment="Left"
+                                 Margin="5,0,5,10" 
+                                 FontWeight="SemiBold"/>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Grid.Column="0" 
+                Grid.Row="2" 
+                Margin="0,15,0,15"
+                FontWeight="Bold"
+                Content="Wróć do dodawania wybranego kontrahenta"
+                Style="{StaticResource ButtonStretch}" 
+                Click="Button_Click"
+                Command="{Binding AddProvidersWithDraftsCommand}"/>
+
+        <Button Grid.Column="1" 
+                Grid.Row="2" 
+                Margin="0,15,0,15"
+                Content="Usuń z kopii roboczych"
+                Style="{StaticResource ButtonStretch}"
+                Command="{Binding DeleteUserInDraftsCommand}"/>
+    </Grid>
+</Page>

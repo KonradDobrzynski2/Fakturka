@@ -1,0 +1,92 @@
+﻿<Page
+    x:Class="Data.View.CreateCategory"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource Locator}, Path=CreateCategoryViewModel}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" BorderBrush="Gray" BorderThickness="0,0,3,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Text="Lista kategorii:"   
+                       HorizontalAlignment="Left"
+                       FontWeight="Bold"
+                       FontSize="20"
+                       Margin="15,15,15,15"
+                       Style="{StaticResource Text}"/>
+
+            <ListView Grid.Row="1"
+                      ItemsSource="{Binding CategoryColection, Mode=TwoWay}"
+                      SelectedValue="{Binding SelectedValue, Mode=TwoWay}">
+                <ListView.ItemContainerTransitions>
+                    <TransitionCollection>
+                        <EntranceThemeTransition IsStaggeringEnabled="True" 
+                                 FromVerticalOffset="400" 
+                                 FromHorizontalOffset="0"/>
+                        <RepositionThemeTransition/>
+                    </TransitionCollection>
+                </ListView.ItemContainerTransitions>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Setter Property="Background" Value="Gainsboro"/>
+                        <Setter Property="Margin" Value="5,10,5,10"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+
+            <Button Grid.Row="2" 
+                    Content="Usuń wybraną kategorię"
+                    Style="{StaticResource ButtonStretch}"
+                    Command="{Binding DeleteCategoryCommand}" 
+                    Margin="15,15,15,15"/>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <StackPanel Grid.Row="0">
+                <TextBlock Text="Nazwa kategorii:"          
+                           FontSize="18"
+                           Margin="15,15,15,15"
+                           Style="{StaticResource Text}"/>
+ 
+                <TextBox PlaceholderText="Nazwa"                      
+                     Style="{StaticResource BoxStretch}"
+                     Margin="15,15,15,15"
+                     Text="{Binding NameCategory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Button Content="Dodaj kategorię"
+                    Margin="15,15,15,15"
+                    Style="{StaticResource ButtonStretch}"
+                    Command="{Binding CreateCategoryCommand}" 
+                    CommandParameter="CreateCategoryViewModel"/>
+            </StackPanel>
+
+            <TextBlock  Grid.Row="1" 
+                        Text="{Binding Status, Mode=TwoWay}"          
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Foreground="{Binding ForegroundStatus, Mode=TwoWay}"
+                        Margin="15,15,15,15"
+                        Style="{StaticResource Text}"
+                        TextWrapping="Wrap"/>
+        </Grid>
+    </Grid>
+</Page>

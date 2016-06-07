@@ -1,0 +1,2 @@
+MainPackage=C:\Users\Konrad\Desktop\Fakturka\Fakturka\bin\x86\Debug\Fakturka_1.0.0.0_x86_Debug.appx
+SymbolPackage=C:\Users\Konrad\Desktop\Fakturka\Fakturka\AppPackages\Fakturka_1.0.0.0_Debug_Test\Fakturka_1.0.0.0_x86_Debug.appxsym

@@ -1,0 +1,277 @@
+﻿<Page
+    x:Class="Data.View.AddWithDraftsProviders"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource Locator}, Path=AddWithDraftsProvidersViewModel}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0" BorderBrush="LightGray" BorderThickness="1,0,2,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Informacje ogólne"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="8"
+                       Grid.Row="0"
+                       Style="{StaticResource Title}"/>
+
+            <TextBox PlaceholderText="Nazwa kontrahenta" 
+                     Text="{Binding NameCompany, Mode=TwoWay}"
+                     Header="[Pole wymagane]"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="8"
+                     Grid.Row="2"
+                     Style="{StaticResource BoxStretch}"
+                     IsEnabled="{Binding IsEnabledAllFields}"/>
+
+            <TextBox PlaceholderText="Imię"
+                     Text="{Binding FirstName, Mode=TwoWay}"
+                     Header="[Pole wymagane]"
+                     Grid.Column="1"
+                     Grid.ColumnSpan="2"
+                     Grid.Row="4"
+                     Style="{StaticResource BoxShort}"
+                     IsEnabled="{Binding IsEnabledAllFields}"/>
+
+            <TextBox PlaceholderText="Nazwisko" 
+                     Text="{Binding LastName, Mode=TwoWay}"
+                     Header="[Pole wymagane]"
+                     Grid.Column="5"
+                     Grid.ColumnSpan="2"
+                     Grid.Row="4"
+                     Style="{StaticResource BoxShort}"
+                     IsEnabled="{Binding IsEnabledAllFields}"/>
+
+            <ComboBox PlaceholderText="Typ"
+                      ItemsSource="{Binding TypeColection}"
+                      SelectedValue="{Binding Type, Mode=TwoWay}"               
+                      Header="[Pole wymagane]"
+                      Grid.Column="2"
+                      Grid.ColumnSpan="4"
+                      Grid.Row="6"
+                      Style="{StaticResource Combo}"
+                      IsEnabled="{Binding IsEnabledAllFields}"/>
+
+            <TextBox PlaceholderText="NIP"
+                     Text="{Binding Nip, Mode=TwoWay}"
+                     Header="[Pole wymagane]"
+                     Grid.Column="2"
+                     Grid.ColumnSpan="4"
+                     Grid.Row="8"
+                     MaxLength="10"
+                     Style="{StaticResource BoxShort}"
+                     IsEnabled="{Binding IsEnabledAllFields}"/>
+
+            <TextBox PlaceholderText="Regon"
+                     Text="{Binding Regon, Mode=TwoWay}"               
+                     Grid.Column="2"
+                     Grid.ColumnSpan="4"
+                     Grid.Row="10"
+                     MaxLength="9"
+                     Style="{StaticResource BoxShort}"
+                     IsEnabled="{Binding IsEnabledAllFields}"/>
+
+            <TextBox PlaceholderText="PESEL"
+                     Text="{Binding Pesel, Mode=TwoWay}"
+                     Grid.Column="2"
+                     Grid.ColumnSpan="4"
+                     Grid.Row="12"
+                     MaxLength="11"
+                     Style="{StaticResource BoxShort}"
+                     IsEnabled="{Binding IsEnabledAllFields}">
+            </TextBox>
+
+            <TextBlock Name="Status" 
+                       Text="{Binding Status, Mode=TwoWay}"   
+                       FontWeight="Bold"
+                       Foreground="{Binding ForegroundStatus}"
+                       HorizontalAlignment="Center"
+                       FontSize="20"
+                       Grid.ColumnSpan="8"
+                       Grid.Row="14"
+                       MinHeight="32"
+                       TextWrapping="Wrap"/>
+
+
+        </Grid>
+
+        <Grid Grid.Column="1"  Grid.Row="0" BorderBrush="LightGray" BorderThickness="0,0,1,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Kontakt"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="8"
+                       Grid.Row="0"
+                       Style="{StaticResource Title}"/>
+
+            <TextBox PlaceholderText="Kod pocztowy"   
+                     Text="{Binding PostalCode, Mode=TwoWay}"
+                     Header="[Pole wymagane]"
+                     Grid.Column="3"
+                     Grid.ColumnSpan="2"
+                     Grid.Row="2"
+                     Style="{StaticResource BoxShort}"
+                     IsEnabled="{Binding IsEnabledAllFields}"/>
+
+            <TextBox PlaceholderText="Miejscowość"
+                     Text="{Binding City, Mode=TwoWay}"
+                     Header="[Pole wymagane]"
+                     Grid.Column="2"
+                     Grid.ColumnSpan="4"
+                     Grid.Row="4"
+                     Style="{StaticResource BoxShort}"
+                     IsEnabled="{Binding IsEnabledAllFields}"/>
+
+            <TextBox PlaceholderText="Ulica, lokal"
+                     Text="{Binding Address, Mode=TwoWay}"
+                     Header="[Pole wymagane]"
+                     Grid.Column="1"
+                     Grid.ColumnSpan="6"
+                     Grid.Row="6"
+                     Style="{StaticResource BoxShort}"
+                     IsEnabled="{Binding IsEnabledAllFields}"/>
+
+            <ComboBox PlaceholderText="Województwo"
+                      ItemsSource="{Binding StateColection}"
+                      SelectedValue="{Binding State, Mode=TwoWay}"
+                      Header=" "
+                      Grid.Column="2"
+                      Grid.ColumnSpan="4"
+                      Grid.Row="8"
+                      Style="{StaticResource Combo}"
+                      IsEnabled="{Binding IsEnabledAllFields}"/>
+
+            <ComboBox PlaceholderText="Kraj"
+                      ItemsSource="{Binding CountryColection}"
+                      SelectedValue="{Binding Country, Mode=TwoWay}"
+                      Grid.Column="2"
+                      Grid.ColumnSpan="4"
+                      Grid.Row="10"
+                      Style="{StaticResource Combo}"
+                      IsEnabled="{Binding IsEnabledAllFields}"/>
+
+            <TextBox PlaceholderText="E-Mail"
+                     Text="{Binding Email, Mode=TwoWay}"
+                     Grid.Column="2"
+                     Grid.ColumnSpan="4"
+                     Grid.Row="12"
+                     Style="{StaticResource BoxShort}"
+                     IsEnabled="{Binding IsEnabledAllFields}"/>
+
+            <TextBox PlaceholderText="Numer telefonu"
+                     Text="{Binding PhoneNumber, Mode=TwoWay}"
+                     Grid.Column="2"
+                     Grid.ColumnSpan="4"
+                     Grid.Row="14"
+                     Style="{StaticResource BoxShort}" FontStyle="Italic"
+                     IsEnabled="{Binding IsEnabledAllFields}"/>
+        </Grid>
+
+        <Grid Grid.ColumnSpan="2" Grid.Row="1" BorderBrush="LightGray" BorderThickness="0,3,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Column="5"
+                    Grid.ColumnSpan="6"
+                    Grid.Row="1"
+                    Content="Dodaj kontrahenta z kopii roboczych"
+                    Command="{Binding AddUserToDatabaseCommand}"
+                    FontWeight="Bold"
+                    FontSize="20"
+                    Style="{StaticResource ButtonStretch}"/>
+
+            <Button Grid.Column="13"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="1" 
+                    Content="Wyczyść wszystkie pola"
+                    Command="{Binding ClearAllFieldsCommand}"
+                    Style="{StaticResource ButtonStretch}"/>
+        </Grid>
+    </Grid>
+</Page>
